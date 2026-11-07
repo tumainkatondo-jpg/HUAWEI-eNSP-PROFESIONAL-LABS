@@ -1,0 +1,2 @@
+PC2 (behind AR4 / LSW1): IP 192.168.10.2  Mask 255.255.255.0  Gateway 192.168.10.1
+PC1 (behind AR5 / LSW2): IP 192.168.20.2  Mask 255.255.255.0  Gateway 192.168.20.1

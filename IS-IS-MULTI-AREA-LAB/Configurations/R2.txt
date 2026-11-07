@@ -1,0 +1,24 @@
+#
+sysname AR2
+#
+isis 1
+ is-level level-1-2
+ network-entity 49.0001.0001.0200.2002.00
+ import-route isis level-2 into level-1 filter-policy ip-prefix 1
+#
+interface GigabitEthernet0/0/0
+ ip address 10.1.12.2 255.255.255.0
+ isis enable 1
+ isis circuit-level level-1
+#
+interface GigabitEthernet0/0/1
+ ip address 10.1.24.2 255.255.255.0
+ isis enable 1
+ isis circuit-level level-2
+#
+interface LoopBack0
+ ip address 2.2.2.2 255.255.255.255
+ isis enable 1
+#
+ip ip-prefix 1 index 10 permit 192.168.10.0 24
+#

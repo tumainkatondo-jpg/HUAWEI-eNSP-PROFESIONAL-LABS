@@ -1,0 +1,21 @@
+#
+sysname AR1
+#
+isis 1
+ is-level level-1
+ network-entity 49.0001.0001.0100.1001.00
+#
+interface GigabitEthernet0/0/0
+ ip address 10.1.12.1 255.255.255.0
+ isis enable 1
+ isis circuit-level level-1
+#
+interface GigabitEthernet0/0/1
+ ip address 10.1.13.1 255.255.255.0
+ isis enable 1
+ isis circuit-level level-1
+#
+interface LoopBack0
+ ip address 1.1.1.1 255.255.255.255
+ isis enable 1
+#
