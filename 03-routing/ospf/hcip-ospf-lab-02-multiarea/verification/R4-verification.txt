@@ -1,0 +1,93 @@
+=====================================
+Router: R4
+Lab: HCIP OSPF Lab 2 Multi-Area
+Date: 2026-11-08
+=====================================
+
+
+<AR4>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.4.4
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          GigabitEthernet0/0/0             10.0.2.2         Full        
+ 0.0.0.1          GigabitEthernet0/0/1             10.0.5.5         Full        
+ ----------------------------------------------------------------------------
+<AR4>disp	
+<AR4>display os	
+<AR4>display ospf ls	
+<AR4>display ospf lsdb 
+
+	 OSPF Process 1 with Router ID 10.0.4.4
+		 Link State Database 
+
+		         Area: 0.0.0.0
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ Router    10.0.4.4        10.0.4.4          1217  48    80000008      10
+ Router    10.0.2.2        10.0.2.2          1218  48    80000007      10
+ Network   10.0.24.4       10.0.4.4          1217  32    80000001       0
+ Sum-Net   10.3.0.0        10.0.2.2          1216  28    80000001      10
+ Sum-Net   10.0.3.0        10.0.2.2          1216  28    80000001      10
+ Sum-Net   10.5.0.0        10.0.4.4          1216  28    80000001      10
+ Sum-Net   10.0.1.0        10.0.2.2          1214  28    80000001      10
+ Sum-Net   10.0.5.0        10.0.4.4          1216  28    80000001      10
+ Sum-Net   10.0.45.0       10.0.4.4          1264  28    80000001      10
+ Sum-Net   10.0.123.0      10.0.2.2          1277  28    80000001      10
+ Sum-Asbr  10.0.1.1        10.0.2.2          1214  28    80000001      10
+ 
+		         Area: 0.0.0.1
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ Router    10.0.5.5        10.0.5.5          1218  72    8000000A      10
+ Router    10.0.4.4        10.0.4.4          1217  36    80000003      10
+ Network   10.0.45.5       10.0.5.5          1218  32    80000001       0
+ Sum-Net   10.3.0.0        10.0.4.4          1215  28    80000001      20
+ Sum-Net   10.0.24.0       10.0.4.4          1264  28    80000001      10
+ Sum-Net   10.0.3.0        10.0.4.4          1215  28    80000001      20
+ Sum-Net   10.0.2.0        10.0.4.4          1216  28    80000001      10
+ Sum-Net   10.0.1.0        10.0.4.4          1213  28    80000001      20
+ Sum-Net   10.0.4.0        10.0.4.4          1264  28    80000001       0
+ Sum-Net   10.0.123.0      10.0.4.4          1216  28    80000001      20
+ Sum-Asbr  10.0.1.1        10.0.4.4          1213  28    80000001      20
+ Sum-Asbr  10.0.2.2        10.0.4.4          1216  28    80000001      10
+ 
+
+		 AS External Database
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ External  0.0.0.0         10.0.1.1          1260  36    80000001       1
+ External  10.0.2.0        10.0.2.2          1282  36    80000001       1
+ External  10.2.0.0        10.0.2.2          1284  36    80000001       2
+ External  10.0.123.0      10.0.2.2          1279  36    80000001       1
+ External  10.0.24.0       10.0.2.2          1268  36    80000001       1
+ 
+<AR4>disp	
+<AR4>display osp	
+<AR4>display ospf ro	
+<AR4>display ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.4.4
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.4.0/24        0     Stub       10.0.4.4        10.0.4.4        0.0.0.0
+ 10.0.24.0/24       10    Transit    10.0.24.4       10.0.4.4        0.0.0.0
+ 10.0.45.0/24       10    Transit    10.0.45.4       10.0.4.4        0.0.0.1
+ 10.0.1.0/24        20    Inter-area 10.0.24.2       10.0.2.2        0.0.0.0
+ 10.0.2.0/24        10    Stub       10.0.24.2       10.0.2.2        0.0.0.0
+ 10.0.3.0/24        20    Inter-area 10.0.24.2       10.0.2.2        0.0.0.0
+ 10.0.5.0/24        10    Stub       10.0.45.5       10.0.5.5        0.0.0.1
+ 10.0.123.0/24      20    Inter-area 10.0.24.2       10.0.2.2        0.0.0.0
+ 10.3.0.0/23        20    Inter-area 10.0.24.2       10.0.2.2        0.0.0.0
+ 10.5.0.0/24        10    Stub       10.0.45.5       10.0.5.5        0.0.0.1
+ 10.5.1.0/24        10    Stub       10.0.45.5       10.0.5.5        0.0.0.1
+
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 0.0.0.0/0          21        Type1      1           10.0.24.2       10.0.1.1
+ 10.2.0.0/23        2         Type2      1           10.0.24.2       10.0.2.2
+
+ Total Nets: 13 
+ Intra Area: 7  Inter Area: 4  ASE: 2  NSSA: 0 
+
+Summary: AR4 (Router ID 10.0.4.4) is an OSPF Area Border Router connecting Area 0.0.0.0 (via GE0/0/0 to AR2, 10.0.2.2) and Area 0.0.0.1 (via GE0/0/1 to AR5, 10.0.5.5), with both adjacencies in Full state. Its routing table holds 13 routes (7 intra-area, 4 inter-area, 2 external): networks in AR1/AR2/AR3’s areas are reached via AR2 (10.0.24.2), while 10.0.5.0/24, 10.5.0.0/24, and 10.5.1.0/24 are learned directly from AR5 in Area 1. It also learns the Type 1 default route (0.0.0.0/0, cost 21) from the ASBR AR1 (10.0.1.1) and a Type 2 external route (10.2.0.0/23) from AR2, both via 10.0.24.2

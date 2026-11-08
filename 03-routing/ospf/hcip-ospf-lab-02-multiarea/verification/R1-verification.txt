@@ -1,0 +1,75 @@
+=====================================
+Router: R1
+Lab: HCIP OSPF Lab 2 Multi-Area
+Date: 2026-11-08
+=====================================
+
+<AR1>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.1.1
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.2          GigabitEthernet0/0/0             10.0.2.2         Full        
+ 0.0.0.2          GigabitEthernet0/0/0             10.0.3.3         Full        
+ ----------------------------------------------------------------------------
+<AR1>
+
+
+<AR1>display ospf lsdb 
+
+	 OSPF Process 1 with Router ID 10.0.1.1
+		 Link State Database 
+
+		         Area: 0.0.0.2
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ Router    10.0.3.3        10.0.3.3           569  72    8000000C      10
+ Router    10.0.2.2        10.0.2.2           571  36    80000008      10
+ Router    10.0.1.1        10.0.1.1           568  48    80000008      10
+ Network   10.0.123.2      10.0.2.2           571  36    80000004       0
+ Sum-Net   10.0.24.0       10.0.2.2           633  28    80000002      10
+ Sum-Net   10.5.0.0        10.0.2.2           584  28    80000002      20
+ Sum-Net   10.0.2.0        10.0.2.2           638  28    80000002       0
+ Sum-Net   10.0.5.0        10.0.2.2           584  28    80000002      20
+ Sum-Net   10.0.4.0        10.0.2.2           585  28    80000002      10
+ Sum-Net   10.0.45.0       10.0.2.2           585  28    80000002      20
+ 
+
+		 AS External Database
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ External  0.0.0.0         10.0.1.1           616  36    80000002       1
+ External  10.0.2.0        10.0.2.2           642  36    80000002       1
+ External  10.2.0.0        10.0.2.2           642  36    80000002       2
+ External  10.0.123.0      10.0.2.2           638  36    80000002       1
+ External  10.0.24.0       10.0.2.2           633  36    80000002       1
+ 
+<AR1>
+
+
+<AR1>display  ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.1.1
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.1.0/24        0     Stub       10.0.1.1        10.0.1.1        0.0.0.2
+ 10.0.123.0/24      10    Transit    10.0.123.1      10.0.1.1        0.0.0.2
+ 10.0.2.0/24        10    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.3.0/24        10    Stub       10.0.123.3      10.0.3.3        0.0.0.2
+ 10.0.4.0/24        20    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.5.0/24        30    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.24.0/24       20    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.45.0/24       30    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.3.0.0/24        10    Stub       10.0.123.3      10.0.3.3        0.0.0.2
+ 10.3.1.0/24        10    Stub       10.0.123.3      10.0.3.3        0.0.0.2
+ 10.5.0.0/23        30    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 10.2.0.0/23        2         Type2      1           10.0.123.2      10.0.2.2
+
+ Total Nets: 12 
+ Intra Area: 5  Inter Area: 6  ASE: 1  NSSA: 0
+
+Summary: R1 (Router ID 10.0.1.1) is an internal router in Area 2 with two Full adjacencies, to R2 (the DR and ABR) and R3, on the 10.0.123.0/24 segment. It learns six inter-area routes through R2 as Sum-Net LSAs, which confirms multi-area OSPF is working.

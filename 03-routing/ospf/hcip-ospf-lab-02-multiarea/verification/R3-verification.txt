@@ -1,0 +1,75 @@
+
+=====================================
+Router: R3
+Lab: HCIP OSPF Lab 2 Multi-Area
+Date: 2026-11-08
+=====================================
+
+<AR3>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.3.3
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.2          GigabitEthernet0/0/0             10.0.1.1         Full        
+ 0.0.0.2          GigabitEthernet0/0/0             10.0.2.2         Full        
+ ----------------------------------------------------------------------------
+
+	
+<AR3>display ospf lsdb 
+
+	 OSPF Process 1 with Router ID 10.0.3.3
+		 Link State Database 
+
+		         Area: 0.0.0.2
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ Router    10.0.3.3        10.0.3.3           489  72    8000000A      10
+ Router    10.0.2.2        10.0.2.2           492  36    80000007      10
+ Router    10.0.1.1        10.0.1.1           488  48    80000008      10
+ Network   10.0.123.2      10.0.2.2           492  36    80000003       0
+ Sum-Net   10.0.24.0       10.0.2.2           544  28    80000001      10
+ Sum-Net   10.5.0.0        10.0.2.2           496  28    80000001      20
+ Sum-Net   10.0.2.0        10.0.2.2           555  28    80000001       0
+ Sum-Net   10.0.5.0        10.0.2.2           496  28    80000001      20
+ Sum-Net   10.0.4.0        10.0.2.2           496  28    80000001      10
+ Sum-Net   10.0.45.0       10.0.2.2           496  28    80000001      20
+ 
+
+		 AS External Database
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ External  0.0.0.0         10.0.1.1           538  36    80000001       1
+ External  10.0.2.0        10.0.2.2           560  36    80000001       1
+ External  10.2.0.0        10.0.2.2           560  36    80000001       2
+ External  10.0.123.0      10.0.2.2           555  36    80000001       1
+ External  10.0.24.0       10.0.2.2           544  36    80000001       1
+ 
+	
+<AR3>display ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.3.3
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.3.0/24        0     Stub       10.0.3.3        10.0.3.3        0.0.0.2
+ 10.0.123.0/24      10    Transit    10.0.123.3      10.0.3.3        0.0.0.2
+ 10.3.0.0/24        0     Stub       10.3.0.1        10.0.3.3        0.0.0.2
+ 10.3.1.0/24        0     Stub       10.3.1.1        10.0.3.3        0.0.0.2
+ 10.0.1.0/24        10    Stub       10.0.123.1      10.0.1.1        0.0.0.2
+ 10.0.2.0/24        10    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.4.0/24        20    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.5.0/24        30    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.24.0/24       20    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.0.45.0/24       30    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+ 10.5.0.0/23        30    Inter-area 10.0.123.2      10.0.2.2        0.0.0.2
+
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 0.0.0.0/0          11        Type1      1           10.0.123.1      10.0.1.1
+ 10.2.0.0/23        2         Type2      1           10.0.123.2      10.0.2.2
+
+ Total Nets: 13 
+ Intra Area: 5  Inter Area: 6  ASE: 2  NSSA: 0 
+
+Summary:AR3 (Router ID 10.0.3.3) is an internal OSPF router located entirely in Area 0.0.0.2, with Full adjacencies to AR1 (10.0.1.1) and AR2 (10.0.2.2) over GE0/0/0. Its routing table holds 13 routes (5 intra-area, 6 inter-area, 2 external): the inter-area routes to Area 0 networks are all reached via AR2 (10.0.123.2) as the ABR, and it learns a Type 1 default route (0.0.0.0/0) from AR1 as the ASBR plus a Type 2 external route (10.2.0.0/23) from AR2. AR3 also directly advertises its own stub networks 10.0.3.0/24, 10.3.0.0/24, and 10.3.1.0/24 into the area.
+

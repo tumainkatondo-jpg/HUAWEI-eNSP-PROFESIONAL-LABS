@@ -12,13 +12,13 @@
                 <interface sztype="Ethernet" interfacename="GE" count="2" />
             </slot>
         </dev>
-        <dev id="73077E7B-A7DE-4931-8994-7C295A0B329B" name="AR4" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-A5-17-C0" com_port="2004" bootmode="0" cx="704.000000" cy="206.000000" edit_left="731" edit_top="260">
+        <dev id="0AB229CB-36DA-40da-9F09-CF30F0ADBCAE" name="AR5" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-C5-30-9C" com_port="2005" bootmode="0" cx="945.000000" cy="195.000000" edit_left="972" edit_top="249">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="GE" count="1" />
                 <interface sztype="Ethernet" interfacename="GE" count="2" />
             </slot>
         </dev>
-        <dev id="0AB229CB-36DA-40da-9F09-CF30F0ADBCAE" name="AR5" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-C5-30-9C" com_port="2005" bootmode="0" cx="945.000000" cy="195.000000" edit_left="972" edit_top="249">
+        <dev id="73077E7B-A7DE-4931-8994-7C295A0B329B" name="AR4" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-A5-17-C0" com_port="2004" bootmode="0" cx="704.000000" cy="206.000000" edit_left="731" edit_top="260">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="GE" count="1" />
                 <interface sztype="Ethernet" interfacename="GE" count="2" />

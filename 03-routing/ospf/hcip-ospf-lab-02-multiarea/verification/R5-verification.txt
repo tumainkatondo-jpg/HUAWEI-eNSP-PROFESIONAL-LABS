@@ -1,0 +1,78 @@
+=====================================
+Router: R5
+Lab: HCIP OSPF Lab 2 Multi-Area
+Date: 2026-11-08
+=====================================
+
+<AR5>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.5.5
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.1          GigabitEthernet0/0/0             10.0.4.4         Full        
+ ----------------------------------------------------------------------------
+
+
+
+<AR5>display ospf lsdb 
+
+	 OSPF Process 1 with Router ID 10.0.5.5
+		 Link State Database 
+
+		         Area: 0.0.0.1
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ Router    10.0.5.5        10.0.5.5          1373  72    8000000A      10
+ Router    10.0.4.4        10.0.4.4          1374  36    80000003      10
+ Network   10.0.45.5       10.0.5.5          1373  32    80000001       0
+ Sum-Net   10.3.0.0        10.0.4.4          1373  28    80000001      20
+ Sum-Net   10.0.24.0       10.0.4.4          1421  28    80000001      10
+ Sum-Net   10.0.3.0        10.0.4.4          1373  28    80000001      20
+ Sum-Net   10.0.2.0        10.0.4.4          1374  28    80000001      10
+ Sum-Net   10.0.1.0        10.0.4.4          1370  28    80000001      20
+ Sum-Net   10.0.4.0        10.0.4.4          1421  28    80000001       0
+ Sum-Net   10.0.123.0      10.0.4.4          1374  28    80000001      20
+ Sum-Asbr  10.0.1.1        10.0.4.4          1370  28    80000001      20
+ Sum-Asbr  10.0.2.2        10.0.4.4          1374  28    80000001      10
+ 
+
+		 AS External Database
+ Type      LinkState ID    AdvRouter          Age  Len   Sequence   Metric
+ External  0.0.0.0         10.0.1.1          1417  36    80000001       1
+ External  10.0.2.0        10.0.2.2          1439  36    80000001       1
+ External  10.2.0.0        10.0.2.2          1439  36    80000001       2
+ External  10.0.123.0      10.0.2.2          1434  36    80000001       1
+ External  10.0.24.0       10.0.2.2          1423  36    80000001       1
+ 
+
+
+
+<AR5>display ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.5.5
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.5.0/24        0     Stub       10.0.5.5        10.0.5.5        0.0.0.1
+ 10.0.45.0/24       10    Transit    10.0.45.5       10.0.5.5        0.0.0.1
+ 10.5.0.0/24        0     Stub       10.5.0.1        10.0.5.5        0.0.0.1
+ 10.5.1.0/24        0     Stub       10.5.1.1        10.0.5.5        0.0.0.1
+ 10.0.1.0/24        30    Inter-area 10.0.45.4       10.0.4.4        0.0.0.1
+ 10.0.2.0/24        20    Inter-area 10.0.45.4       10.0.4.4        0.0.0.1
+ 10.0.3.0/24        30    Inter-area 10.0.45.4       10.0.4.4        0.0.0.1
+ 10.0.4.0/24        10    Inter-area 10.0.45.4       10.0.4.4        0.0.0.1
+ 10.0.24.0/24       20    Inter-area 10.0.45.4       10.0.4.4        0.0.0.1
+ 10.0.123.0/24      30    Inter-area 10.0.45.4       10.0.4.4        0.0.0.1
+ 10.3.0.0/23        30    Inter-area 10.0.45.4       10.0.4.4        0.0.0.1
+
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 0.0.0.0/0          31        Type1      1           10.0.45.4       10.0.1.1
+ 10.2.0.0/23        2         Type2      1           10.0.45.4       10.0.2.2
+
+ Total Nets: 13 
+ Intra Area: 4  Inter Area: 7  ASE: 2  NSSA: 0
+
+
+Summary: AR5 (Router ID 10.0.5.5) is an internal OSPF router located entirely in Area 0.0.0.1, with a single Full adjacency to AR4 (10.0.4.4) over GE0/0/0. Its routing table holds 13 routes (4 intra-area, 7 inter-area, 2 external): all routes to Area 0 and Area 2 networks are reached via AR4 (10.0.45.4) as the ABR, and it learns the Type 1 default route (0.0.0.0/0, cost 31) from the ASBR AR1 (10.0.1.1) plus a Type 2 external route (10.2.0.0/23) from AR2. AR5 directly advertises its own stub networks 10.0.5.0/24, 10.5.0.0/24, and 10.5.1.0/24 into the area.
