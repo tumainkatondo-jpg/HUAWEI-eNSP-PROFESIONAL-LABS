@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="3334E256-33EA-4c90-81B6-8B04C11263ED" name="AR1" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-8B-14-A4" com_port="2000" bootmode="0" cx="211.000000" cy="224.000000" edit_left="238" edit_top="278">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="3F62A6D2-AA9E-4bc7-9827-320DB38F34BA" name="AR2" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-AF-4C-88" com_port="2001" bootmode="0" cx="723.000000" cy="215.000000" edit_left="750" edit_top="269">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="3334E256-33EA-4c90-81B6-8B04C11263ED" destDeviceID="3F62A6D2-AA9E-4bc7-9827-320DB38F34BA">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="281.177094" srcBoundRect_Y="250.241028" srcOffset_X="-13.000000" srcOffset_Y="7.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="706.822876" tarBoundRect_Y="242.758972" tarOffset_X="-39.000000" tarOffset_Y="7.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="439" top="219" right="534" bottom="236" content="10.0.12.0/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="266" top="227" right="285" bottom="244" content=".1" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="703" top="221" right="722" bottom="238" content=".2" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="540" top="11" right="1027" bottom="106" content="FTP SERVICES CONFIGURATION&#x0D;&#x0A;1.ftp server&#x0D;&#x0A;2.ftp client&#x0D;&#x0A;3.get command to download the file followed withe the file name&#x0D;&#x0A;4.put command to uload file followed with file name&#x0D;&#x0A;5.delete flash/file name uploaded/downlaoded command" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

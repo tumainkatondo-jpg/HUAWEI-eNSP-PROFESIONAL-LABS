@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="DB19DB1E-A36C-40f1-BB43-580674AD0057" name="AR2" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-72-07-C0" com_port="2002" bootmode="0" cx="363.000000" cy="140.000000" edit_left="390" edit_top="194">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+            </slot>
+            <slot isMainBoard="0" id="1" type="6" />
+        </dev>
+        <dev id="E7117A72-0236-43a0-A2F5-18D32B84CAB1" name="AR1" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-62-14-61" com_port="2003" bootmode="0" cx="656.000000" cy="120.000000" edit_left="683" edit_top="174">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+            </slot>
+        </dev>
+        <dev id="4F172CCF-BC8B-4116-8F79-DC46C5A7C799" name="AR3" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-E3-30-92" com_port="2001" bootmode="0" cx="69.000000" cy="250.000000" edit_left="96" edit_top="304">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+            </slot>
+        </dev>
+        <dev id="E9CAF454-D625-479d-B4A3-58BEE5CC9D64" name="AR4" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-C0-2D-B1" com_port="2000" bootmode="0" cx="78.000000" cy="66.000000" edit_left="105" edit_top="120">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="E9CAF454-D625-479d-B4A3-58BEE5CC9D64" destDeviceID="DB19DB1E-A36C-40f1-BB43-580674AD0057">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="146.797791" srcBoundRect_Y="103.852760" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="348.202209" tarBoundRect_Y="156.147247" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="4F172CCF-BC8B-4116-8F79-DC46C5A7C799" destDeviceID="DB19DB1E-A36C-40f1-BB43-580674AD0057">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="136.445511" srcBoundRect_Y="261.867310" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="1" tarBoundRectIsMoved="0" tarBoundRect_X="349.554474" tarBoundRect_Y="182.132675" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="DB19DB1E-A36C-40f1-BB43-580674AD0057" destDeviceID="E7117A72-0236-43a0-A2F5-18D32B84CAB1">
+            <interfacePair lineName="Copper" srcIndex="10" srcBoundRectIsMoved="0" srcBoundRect_X="433.083527" srcBoundRect_Y="164.059143" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="639.916504" tarBoundRect_Y="149.940857" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips />
+</topo>

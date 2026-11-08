@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="B8FE7345-0719-4b5a-8579-557DAE45FC8C" name="AC1" poe="0" model="AC6605" settings="" system_mac="00-E0-FC-5D-80-64" com_port="2005" bootmode="0" cx="914.013733" cy="43.222717" edit_left="941" edit_top="95">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="0810D767-9642-4249-BA6B-731F4E5D6BE8" name="STA1" poe="0" model="STA" settings=" -simsta_ip 0.0.0.0  -simsta_mask 0.0.0.0  -simsta_gateway 0.0.0.0  -simsta_mac 54-89-98-7B-4A-C1  -simsta_check 0 " system_mac="54-89-98-7B-4A-C1" com_port="0" bootmode="0" cx="970.600037" cy="167.700012" edit_left="997" edit_top="221">
+            <slot number="slot17" isMainBoard="1" />
+        </dev>
+        <dev id="36F5805E-4FFE-448e-A10F-996E8174E3FD" name="STA2" poe="0" model="STA" settings=" -simsta_ip 0.0.0.0  -simsta_mask 0.0.0.0  -simsta_gateway 0.0.0.0  -simsta_mac 54-89-98-FF-45-37  -simsta_check 0 " system_mac="54-89-98-FF-45-37" com_port="0" bootmode="0" cx="245.000000" cy="130.900009" edit_left="272" edit_top="184">
+            <slot number="slot17" isMainBoard="1" />
+        </dev>
+        <dev id="C97EE2EB-A18B-41a3-BC62-0C920B20BA86" name="AR2" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-A0-80-6E" com_port="2000" bootmode="0" cx="592.352844" cy="15.000000" edit_left="619" edit_top="69">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="58D69D38-28EC-429e-B3B9-ABB6A14F99DB" name="LSW1" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-AC-10-CA" com_port="2001" bootmode="0" cx="592.960571" cy="225.471420" edit_left="568" edit_top="249">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="D135405D-7FAC-4150-8450-234D7224F35B" name="LSW2" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-F1-5F-B0" com_port="2002" bootmode="0" cx="605.888794" cy="419.124939" edit_left="632" edit_top="473">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="BFC7DABF-F4C3-4be6-8A5D-975D19940789" name="AP2" poe="0" model="AP8030" settings=" -apMac 00-E0-FC-1B-5B-40 -apSN 210235448310AA5DA37D" system_mac="00-E0-FC-1B-5B-40" com_port="2004" bootmode="0" cx="926.134399" cy="386.816956" edit_left="953" edit_top="440">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="3" />
+            </slot>
+        </dev>
+        <dev id="5DBB5E9B-E30C-4f7e-BBA7-1FA7189491A9" name="AP1" poe="0" model="AP8030" settings=" -apMac 00-E0-FC-68-57-F0 -apSN 210235448310B237325E" system_mac="00-E0-FC-68-57-F0" com_port="2003" bootmode="0" cx="308.422546" cy="317.888794" edit_left="335" edit_top="371">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="3" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="D135405D-7FAC-4150-8450-234D7224F35B" destDeviceID="58D69D38-28EC-429e-B3B9-ABB6A14F99DB">
+            <interfacePair lineName="Copper" srcIndex="22" srcBoundRectIsMoved="1" srcBoundRect_X="629.112732" srcBoundRect_Y="402.912872" srcOffset_X="-22.000000" srcOffset_Y="-20.000000" tarIndex="2" tarBoundRectIsMoved="1" tarBoundRect_X="621.887268" tarBoundRect_Y="295.087128" tarOffset_X="-18.000000" tarOffset_Y="7.000000" />
+        </line>
+        <line srcDeviceID="C97EE2EB-A18B-41a3-BC62-0C920B20BA86" destDeviceID="58D69D38-28EC-429e-B3B9-ABB6A14F99DB">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="619.000000" srcBoundRect_Y="85.183769" srcOffset_X="-14.000000" srcOffset_Y="13.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="619.000000" tarBoundRect_Y="208.816238" tarOffset_X="-22.000000" tarOffset_Y="-15.000000" />
+        </line>
+        <line srcDeviceID="58D69D38-28EC-429e-B3B9-ABB6A14F99DB" destDeviceID="B8FE7345-0719-4b5a-8579-557DAE45FC8C">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="656.594177" srcBoundRect_Y="230.751114" srcOffset_X="19.000000" srcOffset_Y="-3.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="903.405823" tarBoundRect_Y="91.248886" tarOffset_X="-50.000000" tarOffset_Y="-19.000000" />
+        </line>
+        <line srcDeviceID="D135405D-7FAC-4150-8450-234D7224F35B" destDeviceID="BFC7DABF-F4C3-4be6-8A5D-975D19940789">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="674.957336" srcBoundRect_Y="441.583832" srcOffset_X="54.000000" srcOffset_Y="11.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="910.042664" tarBoundRect_Y="417.416168" tarOffset_X="-29.000000" tarOffset_Y="14.000000" />
+        </line>
+        <line srcDeviceID="D135405D-7FAC-4150-8450-234D7224F35B" destDeviceID="5DBB5E9B-E30C-4f7e-BBA7-1FA7189491A9">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="591.157715" srcBoundRect_Y="431.973358" srcOffset_X="-77.000000" srcOffset_Y="10.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="375.842285" tarBoundRect_Y="358.026642" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="87" top="6" right="559" bottom="101" content="LAYER 2 OFF-PATH NETWWORKING DESIGN&#x0D;&#x0A;1.Inline L.2 design means the AC seats inline the data path&#x0D;&#x0A;2.bypass l.2 design occour when the AC seats by pass the data&#x0D;&#x0A;flow but it is within the same subnet&#x0D;&#x0A;&#x0D;&#x0A;for this topology is the bypass L.2 design" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

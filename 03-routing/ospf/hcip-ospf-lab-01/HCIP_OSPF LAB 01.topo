@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="CB9BCBB0-127F-4d1d-9B0F-AB828D1A7DA5" name="LSW1" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-F0-6D-76" com_port="2000" bootmode="0" cx="445.000000" cy="494.000000" edit_left="472" edit_top="548">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="0DC2AA7F-E8E4-44aa-8B79-888B29C91762" name="AR3" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-B9-2A-B3" com_port="2003" bootmode="0" cx="856.000000" cy="488.000000" edit_left="883" edit_top="542">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="1686EFCB-DBC1-44fa-91F6-008035959074" name="AR1" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-D8-10-EB" com_port="2001" bootmode="0" cx="81.000000" cy="512.000000" edit_left="108" edit_top="566">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="F6624724-1069-4507-B431-DED1B22ED92C" name="AR2" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-FF-67-D7" com_port="2002" bootmode="0" cx="441.000000" cy="256.000000" edit_left="468" edit_top="310">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="1686EFCB-DBC1-44fa-91F6-008035959074" destDeviceID="CB9BCBB0-127F-4d1d-9B0F-AB828D1A7DA5">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="151.131058" srcBoundRect_Y="536.867126" srcOffset_X="-14.000000" srcOffset_Y="7.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="428.868927" tarBoundRect_Y="523.132874" tarOffset_X="-50.000000" tarOffset_Y="11.000000" />
+        </line>
+        <line srcDeviceID="CB9BCBB0-127F-4d1d-9B0F-AB828D1A7DA5" destDeviceID="F6624724-1069-4507-B431-DED1B22ED92C">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="471.274323" srcBoundRect_Y="477.822327" srcOffset_X="6.000000" srcOffset_Y="-16.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="468.725677" tarBoundRect_Y="326.177673" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="CB9BCBB0-127F-4d1d-9B0F-AB828D1A7DA5" destDeviceID="0DC2AA7F-E8E4-44aa-8B79-888B29C91762">
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="0" srcBoundRect_X="515.179138" srcBoundRect_Y="520.369629" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="839.820862" tarBoundRect_Y="515.630371" tarOffset_X="-26.000000" tarOffset_Y="15.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="762" top="124" right="1106" bottom="234" content="HCIP OSPF CONFIG&#x0D;&#x0A;Area authentication&#x0D;&#x0A;silent interface feature configuration&#x0D;&#x0A;loopback interface&#x0D;&#x0A;cost manupulation of both the int $ loopback&#x0D;&#x0A;ospf lsdb router LSA analysisi&#x0D;&#x0A;ospf routing table observation" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

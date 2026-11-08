@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="02CB1F2B-8049-457f-BE3D-8275C8EC10EB" name="PC2" poe="0" model="PC" settings=" -simpc_ip 10.10.20.1  -simpc_mask 255.255.255.0  -simpc_gateway 10.10.20.254  -simpc_mac 54-89-98-99-10-C6  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0  -simpc_igmp_version 1  -simpc_group_ip_start 0.0.0.0  -simpc_src_ip_start 0.0.0.0  -simpc_group_num 0  -simpc_group_step 0  -simpc_src_num 0  -simpc_src_step 0  -simpc_type MODE_IS_INCLUDE " system_mac="54-89-98-99-10-C6" com_port="0" bootmode="0" cx="817.000000" cy="338.000000" edit_left="844" edit_top="392">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="E7F39794-132D-477b-BA5C-E2190CB2A372" name="PC1" poe="0" model="PC" settings=" -simpc_ip 10.10.10.1  -simpc_mask 255.255.255.0  -simpc_gateway 10.10.10.254  -simpc_mac 54-89-98-48-38-0B  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0  -simpc_igmp_version 1  -simpc_group_ip_start 0.0.0.0  -simpc_src_ip_start 0.0.0.0  -simpc_group_num 0  -simpc_group_step 0  -simpc_src_num 0  -simpc_src_step 0  -simpc_type MODE_IS_INCLUDE " system_mac="54-89-98-48-38-0B" com_port="0" bootmode="0" cx="209.000000" cy="341.000000" edit_left="236" edit_top="395">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="D2E5FE8D-31D2-4b10-95CB-05B75EF3183E" name="AR5" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-44-2B-A1" com_port="2000" bootmode="0" cx="224.000000" cy="139.000000" edit_left="200" edit_top="163">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+                <interface sztype="Serial" interfacename="Serial" count="2" />
+            </slot>
+            <slot isMainBoard="0" id="0" type="521" />
+        </dev>
+        <dev id="1F7265B9-F17F-47f0-9924-D25EF6FBC9DF" name="AR2" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-15-25-A9" com_port="2001" bootmode="0" cx="826.000000" cy="123.000000" edit_left="850" edit_top="104">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+                <interface sztype="Serial" interfacename="Serial" count="2" />
+            </slot>
+            <slot isMainBoard="0" id="0" type="521" />
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="D2E5FE8D-31D2-4b10-95CB-05B75EF3183E" destDeviceID="1F7265B9-F17F-47f0-9924-D25EF6FBC9DF">
+            <interfacePair lineName="Serial" srcIndex="10" srcBoundRectIsMoved="0" srcBoundRect_X="294.168518" srcBoundRect_Y="164.852661" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="10" tarBoundRectIsMoved="1" tarBoundRect_X="809.831482" tarBoundRect_Y="151.147339" tarOffset_X="-59.000000" tarOffset_Y="10.000000" />
+        </line>
+        <line srcDeviceID="D2E5FE8D-31D2-4b10-95CB-05B75EF3183E" destDeviceID="E7F39794-132D-477b-BA5C-E2190CB2A372">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="247.802094" srcBoundRect_Y="209.065201" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="239.197906" tarBoundRect_Y="324.934814" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="1F7265B9-F17F-47f0-9924-D25EF6FBC9DF" destDeviceID="02CB1F2B-8049-457f-BE3D-8275C8EC10EB">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="851.193909" srcBoundRect_Y="193.145981" srcOffset_X="-29.000000" srcOffset_Y="15.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="845.806091" tarBoundRect_Y="321.854034" tarOffset_X="-31.000000" tarOffset_Y="-17.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="210" top="99" right="312" bottom="116" content="AUTHENTICATOR" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="488" top="25" right="839" bottom="73" content="ppp configuration with PAP authentication mode &#x0D;&#x0A;username huawei&#x0D;&#x0A;password huawei@123" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="278" top="138" right="380" bottom="155" content="10.10.1.1 /30" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="701" top="127" right="803" bottom="144" content="10.10.1.2 /30" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="871" top="128" right="905" bottom="145" content="PEER" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="220" top="426" right="299" bottom="443" content="10.10.10.1" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="813" top="420" right="892" bottom="437" content="10.10.20.1" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="526" top="231" right="553" bottom="248" content="PPP" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

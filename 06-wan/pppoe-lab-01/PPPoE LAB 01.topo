@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="9A4A91FB-DA4B-4d9e-A723-19FD2E30E8A6" name="AR1" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-81-5D-6F" com_port="2000" bootmode="0" cx="209.000000" cy="213.000000" edit_left="236" edit_top="267">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="A90CE557-154F-4ac9-9083-3F30AED4D14F" name="AR2" poe="0" model="AR2240" settings="" system_mac="00-E0-FC-9E-4C-08" com_port="2001" bootmode="0" cx="721.000000" cy="204.000000" edit_left="748" edit_top="258">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="9A4A91FB-DA4B-4d9e-A723-19FD2E30E8A6" destDeviceID="A90CE557-154F-4ac9-9083-3F30AED4D14F">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="279.177094" srcBoundRect_Y="239.241028" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="704.822876" tarBoundRect_Y="231.758972" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="202" top="186" right="251" bottom="203" content="client" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="707" top="159" right="802" bottom="176" content="pppoe_server" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="348" top="38" right="639" bottom="55" content="configuring the pppoe server and cliet" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

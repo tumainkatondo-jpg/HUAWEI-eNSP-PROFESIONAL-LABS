@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="A2452E58-7984-443c-BA0A-6E576F200DC3" name="AR3" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-DB-51-02" com_port="2002" bootmode="0" cx="601.000000" cy="242.000000" edit_left="630" edit_top="222">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+            </slot>
+        </dev>
+        <dev id="9DD04D50-056F-4773-92F3-63DE3F432FD8" name="AR2" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-76-3D-24" com_port="2000" bootmode="0" cx="303.000000" cy="61.000000" edit_left="333" edit_top="42">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+            </slot>
+        </dev>
+        <dev id="051AA455-58BA-4d51-A9AB-95E07FC11C60" name="AR1" poe="0" model="AR1220" settings="" system_mac="00-E0-FC-67-0B-88" com_port="2001" bootmode="0" cx="80.000000" cy="257.000000" edit_left="103" edit_top="239">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+                <interface sztype="Ethernet" interfacename="Ethernet" count="8" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="051AA455-58BA-4d51-A9AB-95E07FC11C60" destDeviceID="9DD04D50-056F-4773-92F3-63DE3F432FD8">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="139.435944" srcBoundRect_Y="255.491272" srcOffset_X="-6.000000" srcOffset_Y="-27.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="297.564056" tarBoundRect_Y="116.508720" tarOffset_X="-42.000000" tarOffset_Y="16.000000" />
+        </line>
+        <line srcDeviceID="9DD04D50-056F-4773-92F3-63DE3F432FD8" destDeviceID="A2452E58-7984-443c-BA0A-6E576F200DC3">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="366.909027" srcBoundRect_Y="110.417892" srcOffset_X="4.000000" srcOffset_Y="13.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="591.091003" tarBoundRect_Y="246.582108" tarOffset_X="-59.000000" tarOffset_Y="-34.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="81" top="312" right="130" bottom="329" content="client" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="578" top="293" right="680" bottom="310" content="telnet server" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="304" top="225" right="391" bottom="242" content="ospf area 0" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="266" top="329" right="534" bottom="346" content="successful configured access listed" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>
