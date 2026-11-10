@@ -1,0 +1,16 @@
+
+#
+ sysname AR1
+
+interface GigabitEthernet0/0/0
+ ip address 10.0.13.1 255.255.255.0 
+#
+interface LoopBack0
+ ip address 10.0.1.1 255.255.255.0 
+ ospf network-type broadcast
+#
+ospf 1 
+ area 0.0.0.2 
+  network 10.0.1.1 0.0.0.0 
+  network 10.0.13.1 0.0.0.0 
+  stub 

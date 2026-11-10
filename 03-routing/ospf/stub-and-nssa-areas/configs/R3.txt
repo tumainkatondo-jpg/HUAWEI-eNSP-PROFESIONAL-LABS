@@ -1,0 +1,26 @@
+ sysname AR3
+#
+interface GigabitEthernet0/0/0
+ ip address 10.0.13.2 255.255.255.0 
+#
+interface GigabitEthernet0/0/1
+ ip address 10.0.23.3 255.255.255.0 
+#
+interface GigabitEthernet0/0/2
+ ip address 10.0.34.3 255.255.255.0 
+
+
+interface LoopBack0
+ ip address 10.0.3.3 255.255.255.0 
+ ospf network-type broadcast
+#
+
+ospf 1 
+ area 0.0.0.0 
+  network 10.0.3.3 0.0.0.0 
+  network 10.0.34.3 0.0.0.0 
+ area 0.0.0.2 
+  network 10.0.13.2 0.0.0.0 
+  stub no-summary
+ area 0.0.0.3 
+  network 10.0.23.3 0.0.0.0 

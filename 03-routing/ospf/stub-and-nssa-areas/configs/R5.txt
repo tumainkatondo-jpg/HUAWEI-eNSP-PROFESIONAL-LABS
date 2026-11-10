@@ -1,0 +1,19 @@
+
+#
+ sysname AR5
+
+#
+interface GigabitEthernet0/0/0
+ ip address 10.0.45.5 255.255.255.0 
+
+#
+interface LoopBack0
+ ip address 10.0.5.5 255.255.255.0 
+ ospf network-type broadcast
+#
+ospf 1 
+ import-route direct
+ area 0.0.0.1 
+  network 10.0.45.5 0.0.0.0 
+  nssa
+

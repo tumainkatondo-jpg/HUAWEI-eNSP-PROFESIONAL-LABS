@@ -1,0 +1,120 @@
+VERIFICATION OF DIFERENT ROUTES LEARNED BY OSPF PROCESES
+             
+    OSPF R1 ROUTING TABLE
+<AR1>display  ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.13.1
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.1.0/24        0     Stub       10.0.1.1        10.0.13.1       0.0.0.2
+ 10.0.13.0/24       1     Transit    10.0.13.1       10.0.13.1       0.0.0.2
+ 0.0.0.0/0          2     Inter-area 10.0.13.2       10.0.13.2       0.0.0.2
+
+ Total Nets: 3  
+ Intra Area: 2  Inter Area: 1  ASE: 0  NSSA: 0 
+
+
+     R2 OSPF ROUTING TABLE   
+<AR2>display ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.23.2
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.23.0/24       1     Transit    10.0.23.2       10.0.23.2       0.0.0.3
+ 10.0.1.0/24        2     Inter-area 10.0.23.3       10.0.13.2       0.0.0.3
+ 10.0.3.0/24        1     Inter-area 10.0.23.3       10.0.13.2       0.0.0.3
+ 10.0.4.0/24        2     Inter-area 10.0.23.3       10.0.13.2       0.0.0.3
+ 10.0.13.0/24       2     Inter-area 10.0.23.3       10.0.13.2       0.0.0.3
+ 10.0.34.0/24       2     Inter-area 10.0.23.3       10.0.13.2       0.0.0.3
+ 10.0.45.0/24       3     Inter-area 10.0.23.3       10.0.13.2       0.0.0.3
+
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 10.0.5.0/24        1         Type2      1           10.0.23.3       10.0.34.4
+
+ Total Nets: 8  
+ Intra Area: 1  Inter Area: 6  ASE: 1  NSSA: 0 
+
+     
+     R3 OSPF ROUTING TABLE
+<AR3>display ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.13.2
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.3.0/24        0     Stub       10.0.3.3        10.0.13.2       0.0.0.0
+ 10.0.13.0/24       1     Transit    10.0.13.2       10.0.13.2       0.0.0.2
+ 10.0.23.0/24       1     Transit    10.0.23.3       10.0.13.2       0.0.0.3
+ 10.0.34.0/24       1     Transit    10.0.34.3       10.0.13.2       0.0.0.0
+ 10.0.1.0/24        1     Stub       10.0.13.1       10.0.13.1       0.0.0.2
+ 10.0.4.0/24        1     Stub       10.0.34.4       10.0.34.4       0.0.0.0
+ 10.0.45.0/24       2     Inter-area 10.0.34.4       10.0.34.4       0.0.0.0
+
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 0.0.0.0/0          21        Type1      1           10.0.23.2       10.0.23.2
+ 10.0.5.0/24        1         Type2      1           10.0.34.4       10.0.34.4
+
+ Total Nets: 9  
+ Intra Area: 6  Inter Area: 1  ASE: 2  NSSA: 0 
+
+
+   
+       R4 OSPF ROUTING TABLE
+AR4>DISP ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.34.4
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.4.0/24        0     Stub       10.0.4.4        10.0.34.4       0.0.0.0
+ 10.0.34.0/24       1     Transit    10.0.34.4       10.0.34.4       0.0.0.0
+ 10.0.45.0/24       1     Transit    10.0.45.4       10.0.34.4       0.0.0.1
+ 10.0.1.0/24        2     Inter-area 10.0.34.3       10.0.13.2       0.0.0.0
+ 10.0.3.0/24        1     Stub       10.0.34.3       10.0.13.2       0.0.0.0
+ 10.0.13.0/24       2     Inter-area 10.0.34.3       10.0.13.2       0.0.0.0
+ 10.0.23.0/24       2     Inter-area 10.0.34.3       10.0.13.2       0.0.0.0
+
+ Routing for ASEs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 0.0.0.0/0          22        Type1      1           10.0.34.3       10.0.23.2
+
+ Routing for NSSAs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 10.0.5.0/24        1         Type2      1           10.0.45.5       10.0.45.5
+
+
+     R5 OSPF ROUTING TABLE
+<AR5>display ospf routing 
+
+	 OSPF Process 1 with Router ID 10.0.45.5
+		  Routing Tables 
+
+ Routing for Network 
+ Destination        Cost  Type       NextHop         AdvRouter       Area
+ 10.0.45.0/24       1     Transit    10.0.45.5       10.0.45.5       0.0.0.1
+ 10.0.1.0/24        3     Inter-area 10.0.45.4       10.0.34.4       0.0.0.1
+ 10.0.3.0/24        2     Inter-area 10.0.45.4       10.0.34.4       0.0.0.1
+ 10.0.4.0/24        1     Inter-area 10.0.45.4       10.0.34.4       0.0.0.1
+ 10.0.13.0/24       3     Inter-area 10.0.45.4       10.0.34.4       0.0.0.1
+ 10.0.23.0/24       3     Inter-area 10.0.45.4       10.0.34.4       0.0.0.1
+ 10.0.34.0/24       2     Inter-area 10.0.45.4       10.0.34.4       0.0.0.1
+
+ Routing for NSSAs
+ Destination        Cost      Type       Tag         NextHop         AdvRouter
+ 0.0.0.0/0          1         Type2      1           10.0.45.4       10.0.34.4
+
+ Total Nets: 8  
+ Intra Area: 1  Inter Area: 6  ASE: 0  NSSA: 1 
+
+
+
+
+

@@ -1,0 +1,53 @@
+THE VERIFICATION OF OSPF NEIGHBORS BTN OSPF ROUTERS
+
+<AR1>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.13.1
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.2          GigabitEthernet0/0/0             10.0.13.2        Full        
+ ----------------------------------------------------------------------------
+
+
+<AR2>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.23.2
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.3          GigabitEthernet0/0/0             10.0.13.2        Full        
+ ----------------------------------------------------------------------------
+
+<AR3>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.13.2
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          GigabitEthernet0/0/2             10.0.34.4        Full        
+ 0.0.0.2          GigabitEthernet0/0/0             10.0.13.1        Full        
+ 0.0.0.3          GigabitEthernet0/0/1             10.0.23.2        Full        
+ ----------------------------------------------------------------------------
+
+<AR4>display ospf peer  brief 
+
+	 OSPF Process 1 with Router ID 10.0.34.4
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          GigabitEthernet0/0/0             10.0.13.2        Full        
+ 0.0.0.1          GigabitEthernet0/0/1             10.0.45.5        Full        
+ ----------------------------------------------------------------------------
+
+<AR5>display ospf peer brief 
+
+	 OSPF Process 1 with Router ID 10.0.45.5
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.1          GigabitEthernet0/0/0             10.0.34.4        Full        
+ ------
+
+
+
